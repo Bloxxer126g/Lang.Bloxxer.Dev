@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="Description" content="Lang! A fun language building game where anyone can add a translation for a word!">
+
+    <script src="main.js" defer></script>
+    <link href="styles.css" rel="stylesheet">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet"> 
+
+    <title>Lang!</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+    <h1 class="Text" id="Title">Lang!</h1>
+    <div id="CenterContent">
+        <i>
+            <p class="Hint Text" id="SearchHint">
+                Enter a word to search its translation!
+            </p>
+        </i>
+        <input type="text" class="InputBox Text" id="SearchInputBox" placeholder="Start typing here...">
+        <p></p>
+        <button class="Button" id="SearchButton">
+            Check Translation
+        </button>
+        <h3 class="Text" id="SearchResult"></h1>
+        <input type="text" class="InputBox Text" id="TranslateInputBox" placeholder="Translate the word!" Hidden="true">
+        <p></p>
+        <button class="Button" id="TranslateButton" Hidden="true">
+            Set Translation
+        </button>
+    </div>
+</body>
+</html>

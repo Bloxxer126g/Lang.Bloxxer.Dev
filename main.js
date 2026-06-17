@@ -29,5 +29,5 @@ const TranslateInputBox = document.getElementById("TranslateInputBox");
 const TranslateButton = document.getElementById("TranslateButton");
 
 SearchButton.addEventListener("click", event => {
-    Search(SearchInputBox);
+    Search(SearchInputBox.value);
 })

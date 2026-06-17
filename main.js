@@ -33,9 +33,11 @@ SearchButton.addEventListener("click", event => {
 })
 
 async function test() {
-    await fetch("/api/addTranslation.js/", {
+    console.log(await fetch("/api/addTranslation.js/", {
         body: {
             "hello": "world",
         }
-    })
+    }))
 }
+
+test();

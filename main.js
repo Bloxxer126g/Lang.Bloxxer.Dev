@@ -2,20 +2,23 @@ async function Search(Word) {
     Response = await fetch("/api/getTranslation.js");
     Response = await Response.json();
 
+    console.log(Response);
+
     Discovered = null;
 
     Response.forEach(element => {
         if (element.english_word == Word) {
+            console.log("MATCH :D")
             Discovered = element.gibberish_word;
         }
     });
 
-    console.log(Discovered)
+    console.log(Discovered);
 
     if (Discovered != null) {
-        SearchResult.innerHTML = Discovered
+        SearchResult.innerHTML = Discovered;
     } else {
-        SearchResult.innerHTML = "That word hasn't been defined yet!"
+        SearchResult.innerHTML = "That word hasn't been defined yet!";
     }
 }
 

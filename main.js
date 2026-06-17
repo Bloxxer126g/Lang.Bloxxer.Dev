@@ -10,7 +10,15 @@ async function Search(Word) {
         }
     });
 
-    console.log(Discovered || "Does not exist :O")
+    SearchResult.innerHTML = Discovered || "That word hasn't been translated yet!"
 }
 
-Search("hello");
+const SearchInputBox = document.getElementById("SearchInputBox");
+const SearchButton = document.getElementById("SearchButton");
+const SearchResult = document.getElementById("SearchResult");
+const TranslateInputBox = document.getElementById("TranslateInputBox");
+const TranslateButton = document.getElementById("TranslateButton");
+
+SearchButton.addEventListener("click", event => {
+    Search(SearchInputBox);
+})

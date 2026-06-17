@@ -1,8 +1,16 @@
-async function Start() {
+async function Search(Word) {
     Response = await fetch("/api/getTranslation.js");
-    console.log(Response)
-    Response = await Response.json()
-    console.log(Response)
+    Response = await Response.json();
+
+    Discovered = null;
+
+    Response.forEach(element => {
+        if (element.english_word == Word) {
+            Discovered = element.gibberish_word;
+        }
+    });
+
+    console.log(Discovered || "Does not exist :O")
 }
 
-Start()
+Search("hello");

@@ -10,7 +10,13 @@ async function Search(Word) {
         }
     });
 
-    SearchResult.innerHTML = Discovered || "That word hasn't been translated yet!"
+    console.log(Discovered)
+
+    if (Discovered != null) {
+        SearchResult.innerHTML = Discovered
+    } else {
+        SearchResult.innerHTML = "That word hasn't been defined yet!"
+    }
 }
 
 const SearchInputBox = document.getElementById("SearchInputBox");

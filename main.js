@@ -31,3 +31,11 @@ const TranslateButton = document.getElementById("TranslateButton");
 SearchButton.addEventListener("click", event => {
     Search(SearchInputBox.value);
 })
+
+async function test() {
+    await fetch("/api/addTranslation.js/", {
+        body: {
+            "hello": "world",
+        }
+    })
+}

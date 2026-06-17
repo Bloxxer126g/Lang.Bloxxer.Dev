@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js@2'
+import { createClient } from '@supabase/supabase-js'
 const API_SECRET = process.env.SECRET
 const supabase = createClient('https://qwwxjxsfcomnetognqai.supabase.co/', API_SECRET)
 

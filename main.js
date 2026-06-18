@@ -44,7 +44,7 @@ async function Add() {
     if (TranslateWord == "") {
         return
     }
-    console.log(await fetch("/api/addTranslation.js", {
+    Response = await fetch("/api/addTranslation.js", {
         method: "POST",
         body: JSON.stringify({
             "english_word": TranslateWord,
@@ -53,7 +53,10 @@ async function Add() {
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
-    }))
+    })
+
+    Response = await Response.json();
+    SearchResult.innerHTML = Response.error || "Added successfully";
     
     TranslateButton.setAttribute("Hidden", true);
     TranslateInputBox.setAttribute("Hidden", true);

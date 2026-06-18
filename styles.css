@@ -69,18 +69,18 @@ body {
 
 #TranslateButton {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    scale: 1;
 }
 
 #TranslateButton[Hidden = "true"] {
     scale: 0;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 }
 
 #TranslateInputBox {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    scale: 1;
 }
 
 #TranslateInputBox[Hidden = "true"] {
     scale: 0;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 }

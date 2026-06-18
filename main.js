@@ -9,7 +9,7 @@ async function Search(Word) {
     Discovered = null;
 
     Response.forEach(element => {
-        if (element.english_word == Word) {
+        if (element.english_word.toLowerCase() == Word) {
             console.log("MATCH :D")
             Discovered = element.gibberish_word;
         }

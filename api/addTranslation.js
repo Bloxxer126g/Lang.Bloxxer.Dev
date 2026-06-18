@@ -3,7 +3,7 @@ const API_SECRET = process.env.SECRET
 const supabase = createClient('https://qwwxjxsfcomnetognqai.supabase.co/', API_SECRET)
 
 async function addPost(Val) {
-    let Dict = await fetch("/api/getTranslation.js");
+    let Dict = await fetch("https://lang.bloxxer.dev/api/getTranslation.js");
     Dict = await Dict.json();
     let Info = JSON.parse(Val);
     let Gibberish_Word = Info.gibberish_word;

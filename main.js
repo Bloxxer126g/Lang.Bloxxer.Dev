@@ -35,9 +35,9 @@ SearchButton.addEventListener("click", event => {
 async function test() {
     console.log(await fetch("/api/addTranslation.js", {
         method: "POST",
-        body: {
+        body: JSON.stringify({
             "hello": "world",
-        },
+        }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel="stylesheet">
+    <script>
+        async function Load() {
+            let Words = await fetch("/api/getTranslation.js")
+            Words = Words.json();
+            Words.forEach(element => {
+                let item = document.createElement("p")
+                item.innerHTML = element.engligh_word +" = "+ element.gibberish_word
+                document.body.appendChild(item)
+            });
+        } 
+        Load();
+    </script>
+    <title>lang dict</title>
+</head>
+<body class="text">
+    
+</body>
+</html>

@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     try {
         console.log(req);
         const data = await addPost(req);
-        res.status(200).json(req);
+        res.status(200).json(JSON.stringify(req));
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

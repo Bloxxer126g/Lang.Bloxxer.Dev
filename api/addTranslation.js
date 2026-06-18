@@ -5,7 +5,7 @@ const supabase = createClient('https://qwwxjxsfcomnetognqai.supabase.co/', API_S
 async function addPost(Val) {
     let Dict = await fetch("https://lang.bloxxer.dev/api/getTranslation.js");
     Dict = await Dict.json();
-    let Info = JSON.parse(Val);
+    let Info = Val
     let Gibberish_Word = Info.gibberish_word;
     Dict.forEach(element => {
         if (element["gibberish_word"] == Gibberish_Word) {

@@ -6,8 +6,9 @@
     <link href="/styles.css" rel="stylesheet">
     <script>
         async function Load() {
+            
             let Words = await fetch("/api/getTranslation.js")
-            Words = Words.json();
+            Words = await Words.json();
             Words.forEach(element => {
                 let item = document.createElement("p")
                 item.innerHTML = element.engligh_word +" = "+ element.gibberish_word

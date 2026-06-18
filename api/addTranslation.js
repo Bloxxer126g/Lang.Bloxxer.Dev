@@ -9,7 +9,7 @@ async function addPost(Val) {
     let Gibberish_Word = Info.gibberish_word;
     Dict.forEach(element => {
         if (element["gibberish_word"] == Gibberish_Word) {
-            throw new Error(Gibberish_Word+" has already been defined to "+element["english word"]+".");
+            throw new Error(Gibberish_Word+" has already been defined to "+element["english_word"]+".");
         }
     });
 

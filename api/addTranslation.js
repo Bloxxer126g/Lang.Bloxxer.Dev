@@ -3,7 +3,7 @@ const API_SECRET = process.env.SECRET
 const supabase = createClient('https://qwwxjxsfcomnetognqai.supabase.co/', API_SECRET)
 
 async function addPost(Val) {
-    Val = Val.toLowerCase();
+    Val[1] = Val[1].toLowerCase();
     const { error } = await supabase.from('Dictionary').insert(Val);
 
     if (error) {

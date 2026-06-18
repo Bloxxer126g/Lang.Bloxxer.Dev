@@ -55,7 +55,7 @@ async function Add() {
         }
     })
 
-    Response = Response.json();
+    Response = await Response.json();
     SearchResult.innerHTML = Response || "Added successfully";
     
     TranslateButton.setAttribute("Hidden", true);

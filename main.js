@@ -48,7 +48,7 @@ async function Add() {
         method: "POST",
         body: JSON.stringify({
             "english_word": TranslateWord,
-            "gibberish_word": TranslateInputBox.value,
+            "gibberish_word": TranslateInputBox.value.toLowerCase(),
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"

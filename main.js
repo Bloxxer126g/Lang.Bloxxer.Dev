@@ -36,7 +36,8 @@ async function test() {
     console.log(await fetch("/api/addTranslation.js", {
         method: "POST",
         body: JSON.stringify({
-            "hello": "world",
+            "english_word": "dandilion",
+            "gibberish_word": "damdun"
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"

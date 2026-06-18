@@ -15,8 +15,9 @@ async function addPost(Val) {
 
 export default async function handler(req, res) {
     try {
-        console.log(req);
+        console.error(req);
         const data = await addPost(req);
+        throw req;
         res.status(200).json(JSON.stringify(req));
     } catch (error) {
         res.status(500).json({ error: error.message });

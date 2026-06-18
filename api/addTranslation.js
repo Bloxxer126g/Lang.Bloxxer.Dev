@@ -5,14 +5,15 @@ const supabase = createClient('https://qwwxjxsfcomnetognqai.supabase.co/', API_S
 async function addPost(Val) {
     let Dict = await fetch("https://lang.bloxxer.dev/api/getTranslation.js");
     Dict = await Dict.json();
-    return Dict;
     let Info = JSON.parse(Val);
     let Gibberish_Word = Info.gibberish_word;
-    Dict.body.forEach(element => {
-        if (element.gibberish_word == Gibberish_Word) {
+    Dict.forEach(element => {
+        if (element["gibberish_word"] == Gibberish_Word) {
             console.error("Assignment already exists!")
             throw "Assignment already exists!";
-            return error;
+            err = new error;
+            err.message = "Assignment already exists";
+            return err;
         }
     });
 

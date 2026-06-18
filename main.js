@@ -56,7 +56,7 @@ async function Add() {
     })
 
     Response = Response.json();
-    SearchResult.innerHTML = Response.body;
+    SearchResult.innerHTML = Response.error || "Added successfully";
     
     TranslateButton.setAttribute("Hidden", true);
     TranslateInputBox.setAttribute("Hidden", true);

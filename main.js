@@ -1,4 +1,6 @@
 async function Search(Word) {
+    Word = Word.toLowerCase();
+
     Response = await fetch("/api/getTranslation.js");
     Response = await Response.json();
 
@@ -7,7 +9,7 @@ async function Search(Word) {
     Discovered = null;
 
     Response.forEach(element => {
-        if (element.english_word == Word) {
+        if (element.english_word.toLowerCase() == Word) {
             console.log("MATCH :D")
             Discovered = element.gibberish_word;
         }
@@ -19,6 +21,10 @@ async function Search(Word) {
         SearchResult.innerHTML = Discovered;
     } else {
         SearchResult.innerHTML = "That word hasn't been defined yet!";
+        TranslateWord = Word;
+
+        TranslateButton.removeAttribute("Hidden");
+        TranslateInputBox.removeAttribute("Hidden");
     }
 }
 
@@ -28,16 +34,31 @@ const SearchResult = document.getElementById("SearchResult");
 const TranslateInputBox = document.getElementById("TranslateInputBox");
 const TranslateButton = document.getElementById("TranslateButton");
 
+TranslateWord = "";
+
 SearchButton.addEventListener("click", event => {
     Search(SearchInputBox.value);
 })
 
-async function test() {
-    console.log(await fetch("/api/addTranslation.js/", {
-        body: {
-            "hello": "world",
+async function Add() {
+    if (TranslateWord == "") {
+        return
+    }
+    console.log(await fetch("/api/addTranslation.js", {
+        method: "POST",
+        body: JSON.stringify({
+            "english_word": TranslateWord,
+            "gibberish_word": TranslateInputBox.value.toLowerCase(),
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
         }
     }))
+    
+    TranslateButton.setAttribute("Hidden", true);
+    TranslateInputBox.setAttribute("Hidden", true);
 }
 
-test();
+TranslateButton.addEventListener("click", event => {
+    Add();
+})

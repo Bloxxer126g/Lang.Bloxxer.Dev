@@ -11,7 +11,7 @@
             Words = await Words.json();
             Words.forEach(element => {
                 let item = document.createElement("p")
-                item.innerHTML = element.engligh_word +" = "+ element.gibberish_word
+                item.innerHTML = element.english_word +" = "+ element.gibberish_word
                 document.body.appendChild(item)
             });
         } 

@@ -1,7 +1,7 @@
 async function Search(Word) {
     Word = Word.toLowerCase();
 
-    Response = await fetch("/api/getTranslation.js");
+    Response = await fetch("https://lang.bloxxer.dev/api/getTranslation.js");
     Response = await Response.json();
 
     console.log(Response);
